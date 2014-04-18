@@ -41,7 +41,7 @@ import javax.swing.SwingUtilities;
 /**
  * Main window of the Anagram Game application.
  */
-public class Anagrams extends JFrame {
+public class CatAnagramsGame extends JFrame {
 
     public static void main(String[] args) {
         /* Set the Nimbus look and feel */
@@ -57,20 +57,20 @@ public class Anagrams extends JFrame {
                     break;
                 }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Anagrams.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CatAnagramsGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Anagrams.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CatAnagramsGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Anagrams.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CatAnagramsGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Anagrams.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CatAnagramsGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                new Anagrams().setVisible(true);
+                new CatAnagramsGame().setVisible(true);
             }
         });
     }
@@ -79,7 +79,7 @@ public class Anagrams extends JFrame {
     private WordLibrary wordLibrary;
 
     /** Creates new form Anagrams */
-    public Anagrams() {
+    public CatAnagramsGame() {
         wordLibrary = WordLibrary.getDefault();
         
         initComponents();
@@ -119,7 +119,7 @@ public class Anagrams extends JFrame {
         aboutMenuItem = new javax.swing.JMenuItem();
         exitMenuItem = new javax.swing.JMenuItem();
 
-        setTitle("Anagrams");
+        setTitle("CatAnagramsGame");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 exitForm(evt);
