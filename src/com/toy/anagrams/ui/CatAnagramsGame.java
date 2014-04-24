@@ -35,6 +35,7 @@ import com.toy.anagrams.lib.WordLibrary;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Toolkit;
+
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
@@ -77,6 +78,8 @@ public class CatAnagramsGame extends JFrame {
 
     private int wordIdx = 0;
     private WordLibrary wordLibrary;
+    
+    int count = 3;
 
     /** Creates new form Anagrams */
     public CatAnagramsGame() {
@@ -84,7 +87,7 @@ public class CatAnagramsGame extends JFrame {
         
         initComponents();
         getRootPane().setDefaultButton(guessButton);
-        scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx));
+        scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx,count));
         pack();
         guessedWord.requestFocusInWindow();
         // Center in the screen
@@ -213,6 +216,11 @@ public class CatAnagramsGame extends JFrame {
         mainPanel.add(levelLabel, gridBagConstraints);
 
         selectLevel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Level 1", "Level 2", "Level 3" }));
+        selectLevel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selectLevelActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
@@ -257,7 +265,7 @@ public class CatAnagramsGame extends JFrame {
         wordIdx = (wordIdx + 1) % wordLibrary.getSize();
 
         feedbackLabel.setText(" ");
-        scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx));
+        scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx,count));
         guessedWord.setText("");
         getRootPane().setDefaultButton(guessButton);
 
@@ -283,6 +291,10 @@ public class CatAnagramsGame extends JFrame {
     private void exitForm(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_exitForm
         System.exit(0);
     }//GEN-LAST:event_exitForm
+
+    private void selectLevelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectLevelActionPerformed
+        
+    }//GEN-LAST:event_selectLevelActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
